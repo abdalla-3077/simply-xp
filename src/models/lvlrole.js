@@ -5,4 +5,4 @@ const rol = new mongoose.Schema({
 	lvlrole: { type: Array }
 });
 
-module.exports = mongoose.model('XP-LevelRole', rol);
+module.exports = mongoose.model('Server-Xp-role', rol);

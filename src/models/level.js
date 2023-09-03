@@ -7,4 +7,4 @@ const Levelz = new mongoose.Schema({
 	level: { type: Number, default: 0 }
 });
 
-module.exports = mongoose.model('Xp', Levelz);
+module.exports = mongoose.model('Server-Xp', Levelz);
