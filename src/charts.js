@@ -5,7 +5,7 @@ let leaderboard = require('./leaderboard');
  * @param {import('../index').chartsOptions} options
  */
 
-async function charts(message, options) {
+async function charts(message, options,text) {
 	try {
 		require('canvas');
 	} catch {
@@ -64,7 +64,7 @@ async function charts(message, options) {
 			plugins: {
 				title: {
 					display: true,
-					text: 'XP Datasheet'
+					text: text
 				}
 			}
 		},
@@ -85,7 +85,7 @@ async function charts(message, options) {
 
 	return {
 		attachment: ctx.toBuffer('image/png'),
-		name: 'chart.png'
+		name: `${message.guild.id}-chart.png`
 	};
 }
 
