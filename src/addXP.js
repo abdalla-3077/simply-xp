@@ -70,6 +70,8 @@ async function addXP(message, userID, guildID, xp) {
 	let level1 = user.level;
 
 	user.xp += parseInt(xp, 10);
+	user.lastLevel = Date.now()
+	user.messageCount += 1
 	user.level = Math.floor(0.1 * Math.sqrt(user.xp));
 
 	await user.save().catch((e) => console.log(`[XP] Failed to add XP | User: ${userID} | Err: ${e}`));
