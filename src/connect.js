@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const { bold } = require("chalk");
 /**
  * @param {string} db
  * @param {import('../index').connectOptions} options
@@ -16,7 +16,8 @@ async function connect(db, options = []) {
 
 
 	if (options.notify === false) return;
-	else return console.log('{ XP } Database Connected');
+	else return  console.log(bold.blue("[ Xp Database  Conected ]"));
+	;
 }
 
 module.exports = connect;
