@@ -1,3 +1,5 @@
+
+
 try {
 	require('discord.js');
 } catch (e) {
@@ -29,3 +31,5 @@ module.exports.setLevel = require('./src/setLevel');
 module.exports.setXP = require('./src/setXP');
 
 module.exports.reset = require('./src/reset');
+
+module.exports.resetall = require('./src/resetAll');
