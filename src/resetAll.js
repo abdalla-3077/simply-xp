@@ -16,7 +16,7 @@ async function resetAll(guildID) {
 			throw new Error(err);
 		});
 
-	return { guild: guildID, count: levels.deletedCount };
+	return { guild: guildID, count: levels };
 }
 
 module.exports = resetAll;
