@@ -59,7 +59,8 @@ async function addXP(message, userID, guildID, xp) {
 			user: userID,
 			guild: guildID,
 			xp: xp,
-			level: lvl
+			level: lvl,
+			lastLevel : Date.now()
 		});
 
 		await newUser.save().catch(() => console.log('[XP] Failed to save new user to database'));
