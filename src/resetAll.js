@@ -9,14 +9,14 @@ const levels = require('../src/models/level.js');
 async function resetAll(guildID) {
 
 	if (!guildID) throw new Error('[XP] User ID was not provided.');
-
+	const Count = await levels.count({guild: guildID });
 	await levels
 		.deleteMany({ guild: guildID })
 		.catch((err) => {
 			throw new Error(err);
 		});
-	throw new Error(levels);
-	//return { guild: guildID, count: levels };
+		
+	return { guild: guildID, count: Count };
 }
 
 module.exports = resetAll;
