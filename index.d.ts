@@ -65,6 +65,8 @@ export declare function rank(
 ): Promise<any>
 
 export declare function reset(userID: string, guildID: string): Promise<any>
+export declare function resetAll(guildID: string): Promise<any>
+
 
 export type lvladdOptions = {
   level: string
