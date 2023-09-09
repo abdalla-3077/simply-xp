@@ -10,7 +10,7 @@ let {roleSetup} = require('../simplyxp');
  * @param {number} xp
  */
 
-async function addXP(message, userID, guildID, xp) {
+async function addXP(message, userID, guildID, xp , time) {
 	if (!userID) throw new Error('[XP] User ID was not provided.');
 
 	if (!guildID) throw new Error('[XP] Guild ID was not provided.');
@@ -76,6 +76,10 @@ async function addXP(message, userID, guildID, xp) {
 	user.lastLevel = Date.now();
 	user.messageCount += 1;
 	user.level = Math.floor(0.1 * Math.sqrt(user.xp));
+	user.VoiceTime += time ? 1 : 0;
+
+	
+
 
 	await user.save().catch((e) => console.log(`[XP] Failed to add XP | User: ${userID} | Err: ${e}`));
 
